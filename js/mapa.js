@@ -34,8 +34,8 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                         }
 
                         drawLine( $scope.rutas[company][route],"#CCCCCC");
-                        map.zoom(9);
                         map.setBound();
+                        
                         
                     }
 

@@ -52,6 +52,7 @@ var googleMapMarkers = (function () {
         }
     };
     googleMapMarkers.prototype.setBound = function () {
+        
         var bounds = new google.maps.LatLngBounds();
         this.loadedPoints.forEach(function (point, index) {
             bounds.extend(point);
@@ -61,7 +62,11 @@ var googleMapMarkers = (function () {
     googleMapMarkers.prototype.clearMarkers = function () {
         this.loadedMarkers.forEach(function (marker, index) {
             marker.setMap(null);
+            
         });
+        this.loadedMarkers = [];
+        this.loadedPoints = [];
+        
     };
     googleMapMarkers.prototype.near = function (lat, lng, radius) {
         var _this = this;
