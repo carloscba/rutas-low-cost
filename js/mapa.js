@@ -1,6 +1,8 @@
 angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                 
                 $scope.destinos = []
+                $scope.colMenu = 1;
+                $scope.colMapa = 11;
 
                 $http({
                     method: 'GET',
@@ -11,7 +13,7 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     var map = new googleMapMarkers("AIzaSyCvzWscengQ1ItOtYVWjldACDm7jBH3o7I", canvas);
                     
                     map.setCenter(-24.8442254, -65.4806004);
-                    map.zoom(12);
+                    map.zoom(7);
                     map.mapType("roadmap")
 
                     $scope.destinos = response.data
@@ -53,7 +55,6 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
 
                     $scope.viewAirport = function(iata, lat, lng){
                         map.setCenter(lat, lng);
-                        map.zoom(9)
                         map.clearMarkers();
                         for(n in lines){
                             lines[n].setMap(null)
@@ -115,7 +116,7 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                             data: markers,
                             callback: function (m) {
                                 map.setCenter(m.data.lat, m.data.lng);
-                                map.zoom(9);
+                                map.zoom(7);
                                 $scope.$apply();
                             }
                         };

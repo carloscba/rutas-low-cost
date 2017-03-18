@@ -10,46 +10,88 @@
             <div class="row">
                 
                 <!---------OPCIONES------------/-->
-                <div class="col-md-5 content">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><strong>Aeropuertos</strong></a></li>
-                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><strong>Andes <span style="color:#FF0000">&block;</span></strong></a></li>
-                        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><strong>Alas del sur <span style="color:#00FF00">&block;</span></strong></a></li>
-                        <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"><strong>American Jet <span style="color:#0000FF">&block;</span></strong></a></li>                        
-                        
-                    </ul>
-                    <div class="tab-content">
-                        
-                        <div role="tabpanel" class="tab-pane active" id="tab1">
+                <div class="col-md-{{colMenu}}">
+
+                    <a href="#" ng-click="colMenu=4" ng-show="(colMenu == 1)" class="btnMenu" ><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                    <a href="#" ng-click="colMenu=1" ng-show="(colMenu > 1)" class="btnCerrar" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" ng-show="(colMenu > 1)">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Aeropuertos</strong>
+                            </a>
+                        </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
                             <ul ng-repeat="aeropuerto in destinos" class="aeropuertos">
                                 <li><a href="#" ng-click="viewAirport(aeropuerto.iata,aeropuerto.lat, aeropuerto.lng)">{{getName(aeropuerto.iata)}} ({{aeropuerto.iata}})</a></li>
                             </ul>
                         </div>
-
-                        <div role="tabpanel" class="tab-pane" id="tab2">
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <span style="color:#FF0000">&block;</span>
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <strong>Andes</strong>
+                            </a>
+                            
+                        </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
                             <ul ng-repeat="ruta in rutas['Andes']" class="aeropuertos">
                                 <li><a href="#" ng-click="viewRoute('Andes', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                             </ul>
                         </div>
-
-                        <div role="tabpanel" class="tab-pane" id="tab3">
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <span style="color:#00FF00">&block;</span>
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <strong>Alas del sur </strong>
+                            </a>
+                        </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
                             <ul ng-repeat="ruta in rutas['Alas del Sur']" class="aeropuertos">
                                 <li><a href="#" ng-click="viewRoute('Alas del Sur', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
-                            </ul>                             
+                            </ul>
                         </div>
-                        
-                        <div role="tabpanel" class="tab-pane" id="tab4">  
-                            <ul ng-repeat="ruta in rutas['American']" class="aeropuertos">
-                                <li><a href="#" ng-click="viewRoute('American', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
-                            </ul>                               
                         </div>
-                        
-
                     </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <span style="color:#0000FF">&block;</span>
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <strong>American Jet</strong>
+                                </a>
+                            </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <ul ng-repeat="ruta in rutas['American']" class="aeropuertos">
+                                    <li><a href="#" ng-click="viewRoute('American', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
+                                </ul>
+                        </div>
+                        </div>
+                    </div>
+                    </div>  
+
+
                 </div>
 
                 <!---------MAPA------------/-->
-                <div class="col-md-7">
+                <div class="col-md-{{12 - colMenu}}">
                     <div class="map">
                         <div id="map-canvas"></div>   
                     </div>                    
