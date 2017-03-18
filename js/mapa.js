@@ -28,11 +28,13 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
 
                     $scope.viewRoute = function(company, route){
                         map.clearMarkers();
+                        
                         for(n in lines){
                             lines[n].setMap(null)
                         }
-                        console.log($scope.rutas[company][route])
+
                         drawLine( $scope.rutas[company][route],"#CCCCCC");
+                        map.zoom(9);
                         map.setBound();
                         
                     }
@@ -89,23 +91,53 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     $scope.rutas = {
                         "Andes" : [
                             ["AEP","ROS","RES","PSS","IGR"],
-                            ["AEP","SDE","TUC","SLA","JUJ"],
-                            ["AEP","MDZ","NQN","BRC"],
-                            ["AEP","PMY","CRD","FTE","USH"]
+                            ["AEP","TUC","SDE","SLA","JUJ"],
+                            ["AEP","COR","MDZ","NQN","BRC"], 
+                            ["AEP","PMY","CRD","FTE","USH"], 
+                            ["AEP","COR","SCL"],
+                            ["AEP","COR","LIM"], 
+                            ["AEP","COR","GRU"], 
+
                         ],
                         "Alas del Sur" : [
                             ["COR","AEP","ROS"],
-                            ["COR","AEP","REL","PMY","BRC","NQN","FTE","USH"],
-                            ["COR","VGL","BHI","REL","CRD","RGA","USH"],
+                            ["COR","AEP","REL","PMY","BRC"],
+                            ["NQN","FTE","USH"],
+                            ["COR","AEP","VGL","MDQ","BHI","REL","CRD","RGL","RGA","USH"],
                             ["COR","AEP","NQN","CPC","EQS"],
-                            ["COR","AEP","RCU","LUQ","MDZ","TUC","SLA","JUJ"],
-                            ["COR","MDZ","NQN","REL","CRD","RGL","RGA"],
-                            ["COR","AEP","AFA","UAQ","IRJ","CTC","SDE"],
+                            ["COR","AEP","RCU","LUQ","MDZ","TUC","SLA","JUJ"], 
+                            ["COR","MDZ","NQN"],
+                            ["REL","CRD","RGL","RGA"],
+                            ["COR","AEP","MDZ","AFA","UAQ","IRJ","CTC","SDE"],
                             ["COR","AEP","BHI","RSA","VDM"],
                             ["COR","AEP","SFN","PSS","IGR"],
                             ["SLA","IGR","FTE","BRC","COR"],
                             ["COR","AEP","CNQ","RES","FMA"],
-                            ["SLA","JUJ","CTC","UAQ","MDZ","COR","NQN","RGL"],
+                            ["SLA","JUJ","CTC","UAQ","MDZ","COR","NQN","FTE"],
+                            ["COR","SLA","VVI"],
+                            ["COR","AEP","ROS","POA","GRU","GIG"],
+                            ["COR","AEP","ROS","LIM","MIA"],
+                            ["COR","AEP","ROS","ASU","MIA"],
+                            ["COR","AEP","ROS","VVI"],
+                            ["COR","AEP","ROS","SCL","MIA"],
+                            ["COR","AEP","ROS","MVD","PDP"],
+                            ["COR","AEP",",LAX","PVG"],
+                            ["COR","AEP","FCO"]
+                        ],
+                        "American" : [
+                            ["NQN","CRD","RGL","FTE","RGA","USH"],
+                            ["NQN","CRD","USH"],
+                            ["NQN","ZCO","SCL"],
+                            ["NQN","CRD","RGL","PUQ"],
+                            ["NQN","LGS","MDZ","TUC","SLA","TJA"],
+                            ["NQN","COR","TUC","VVI"],
+                            ["NQN","COR","RES","ASU"],
+                            ["NQN","ROS","IGR"], 
+                            ["NQN","ROS","AEP","PDP"],
+                            ["NQN","BHI","MDQ","AEP"], 
+                            ["NQN","COR","ROS","POA"], 
+                            ["NQN","RSA","AEP"],
+                            ["NQN","BRC","FTE","USH"] 
                         ]
                     }
 

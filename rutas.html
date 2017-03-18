@@ -40,7 +40,7 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><strong>Andes</strong></a></li>
                         <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><strong>Alas del sur</strong></a></li>
-                        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><strong>AeroJet</strong></a></li>                        
+                        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><strong>American Jet</strong></a></li>                        
                         
                     </ul>
                     <div class="tab-content">
@@ -57,7 +57,10 @@
                             </ul>                             
                         </div>
                         
-                        <div role="tabpanel" class="tab-pane" id="tab3">    
+                        <div role="tabpanel" class="tab-pane" id="tab3">  
+                            <ul ng-repeat="ruta in rutas['American']" class="aeropuertos">
+                                <li><a href="#" ng-click="viewRoute('American', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
+                            </ul>                               
                         </div>
                         
 
