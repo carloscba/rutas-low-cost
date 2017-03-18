@@ -10,6 +10,7 @@ var googleMapMarkers = (function () {
     googleMapMarkers.prototype.setCenter = function (lat, lng) {
         var point = new google.maps.LatLng(lat, lng);
         this.map.setCenter(point);
+        
     };
     googleMapMarkers.prototype.zoom = function (zoom) {
         this.map.setZoom(zoom);
