@@ -32,11 +32,36 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                         for(n in lines){
                             lines[n].setMap(null)
                         }
-
                         drawLine( $scope.rutas[company][route],"#CCCCCC");
                         map.setBound();
                         
                         
+                    }
+
+                    $scope.viewAirport = function(iata, lat, lng){
+                        map.setCenter(lat, lng);
+                        map.zoom(9)
+                        map.clearMarkers();
+                        for(n in lines){
+                            lines[n].setMap(null)
+                        }                        
+
+                        for(n in $scope.rutas["Andes"]){
+                            if($scope.rutas["Andes"][n].indexOf(iata)>-1){
+                                drawLine($scope.rutas["Andes"][n],"#FF0000")
+                            }
+                        }
+                        for(n in $scope.rutas["Alas del Sur"]){
+                            if($scope.rutas["Alas del Sur"][n].indexOf(iata)>-1){
+                                drawLine($scope.rutas["Alas del Sur"][n],"#00FF00")
+                            }
+                        }
+                        for(n in $scope.rutas["American"]){
+                            if($scope.rutas["American"][n].indexOf(iata)>-1){
+                                drawLine($scope.rutas["American"][n],"#0000FF")
+                            }
+                        }                                                
+                       
                     }
 
                     var getPosition = function(iata){
@@ -142,12 +167,15 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     }
 
                     for(n in $scope.rutas["Andes"]){
-                        drawLine($scope.rutas["Andes"][n],"#000000")
+                        drawLine($scope.rutas["Andes"][n],"#FF0000")
                     }
 
                     for(n in  $scope.rutas["Alas del Sur"]){
-                        drawLine($scope.rutas["Alas del Sur"][n],"#CCCCCC")
-                    }   
+                        drawLine($scope.rutas["Alas del Sur"][n],"#00FF00")
+                    } 
+                    for(n in  $scope.rutas["American"]){
+                        drawLine($scope.rutas["Alas del Sur"][n],"#0000FF")
+                    }                       
 
                 });
             });
