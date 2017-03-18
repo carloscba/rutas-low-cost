@@ -4,35 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <style>
-            a{
-                color: #000;
-            }
-            ul{
-                display: inline;
-            }
-            .aeropuertos li{
-                list-style: none;
-
-            }
-            .aeropuertos a{
-                text-decoration: none;
-            }
-            .aeropuertos span{
-                display: inline;
-                padding-left: 5px;
-            }
-            .aeropuertos span:after {
-                content: " -";
-            }
-            .aeropuertos span:last-child:after {
-                content: "";
-            }                        
-            .content{
-                height: 600px;
-                overflow: scroll;
-            }
-        </style>
     </head>
     <body ng-app="mapApp" ng-controller="mapCtrl as app">
         <div class="container-fluid">
@@ -42,9 +13,9 @@
                 <div class="col-md-5 content">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><strong>Aeropuertos</strong></a></li>
-                        <li role="presentation"><a href="#tab2" aria-controls="tab1" role="tab" data-toggle="tab"><strong>Andes</strong></a></li>
-                        <li role="presentation"><a href="#tab3" aria-controls="tab2" role="tab" data-toggle="tab"><strong>Alas del sur</strong></a></li>
-                        <li role="presentation"><a href="#tab4" aria-controls="tab3" role="tab" data-toggle="tab"><strong>American Jet</strong></a></li>                        
+                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><strong>Andes</strong></a></li>
+                        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><strong>Alas del sur</strong></a></li>
+                        <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"><strong>American Jet</strong></a></li>                        
                         
                     </ul>
                     <div class="tab-content">
@@ -55,7 +26,7 @@
                             </ul>
                         </div>
 
-                        <div role="tabpanel" class="tab-pane active" id="tab2">
+                        <div role="tabpanel" class="tab-pane" id="tab2">
                             <ul ng-repeat="ruta in rutas['Andes']" class="aeropuertos">
                                 <li><a href="#" ng-click="viewRoute('Andes', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                             </ul>
@@ -67,7 +38,7 @@
                             </ul>                             
                         </div>
                         
-                        <div role="tabpanel" class="tab-pane" id="tab4s">  
+                        <div role="tabpanel" class="tab-pane" id="tab4">  
                             <ul ng-repeat="ruta in rutas['American']" class="aeropuertos">
                                 <li><a href="#" ng-click="viewRoute('American', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                             </ul>                               

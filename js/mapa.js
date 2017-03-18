@@ -27,12 +27,25 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     }
 
                     $scope.viewRoute = function(company, route){
+
+                        switch(company){
+                            case "Andes":
+                                color = "#FF0000"
+                            break;
+                            case "Alas del Sur":
+                                color = "#00FF00"
+                            break;
+                            case "American":
+                                color = "#0000FF"
+                            break;
+                        }
+
                         map.clearMarkers();
                         
                         for(n in lines){
                             lines[n].setMap(null)
                         }
-                        drawLine( $scope.rutas[company][route],"#CCCCCC");
+                        drawLine( $scope.rutas[company][route],color);
                         map.setBound();
                         
                         

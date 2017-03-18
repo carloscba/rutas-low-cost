@@ -13,51 +13,9 @@
 },
 {
 "title":"Buenos Aires",
-"iata":"EZE",
-"lat":"-34.815",
-"lng":"-58.5370171"
-},
-{
-"title":"Buenos Aires",
-"iata":"JNI",
-"lat":"-34.5458573",
-"lng":"-60.9312784"
-},
-{
-"title":"Buenos Aires",
-"iata":"LPG",
-"lat":"-34.9655197",
-"lng":"-57.8975635"
-},
-{
-"title":"Buenos Aires",
 "iata":"MDQ",
 "lat":"-37.9330333",
 "lng":"-57.5841435"
-},
-{
-"title":"Buenos Aires",
-"iata":"NEC",
-"lat":"-38.4879499",
-"lng":"-58.8169243"
-},
-{
-"title":"Buenos Aires",
-"iata":"FDO",
-"lat":"-34.4554405",
-"lng":"-58.5862883"
-},
-{
-"title":"Buenos Aires",
-"iata":"STT",
-"lat":"-36.5423657",
-"lng":"-56.7224987"
-},
-{
-"title":"Buenos Aires",
-"iata":"TDL",
-"lat":"-37.2324369",
-"lng":"-59.2355094"
 },
 {
 "title":"Buenos Aires",
@@ -119,30 +77,14 @@
 "lat":"-27.4483078",
 "lng":"-58.7603974"
 },
-{
-"title":"Corrientes",
-"iata":"OYA",
-"lat":"-29.1049905",
-"lng":"-59.2207626"
-},
+
 {
 "title":"Corrientes",
 "iata":"AOL",
 "lat":"-29.6881667",
 "lng":"-57.1553125"
 },
-{
-"title":"Entre Ríos",
-"iata":"COC",
-"lat":"-29.6881667",
-"lng":"-57.1553125"
-},
-{
-"title":"Entre Ríos",
-"iata":"PRA",
-"lat":"-31.7900161",
-"lng":"-60.4864431"
-},
+
 {
 "title":"Formosa",
 "iata":"FMA",
@@ -155,12 +97,7 @@
 "lat":"-24.3853529",
 "lng":"-65.0987492"
 },
-{
-"title":"La Pampa",
-"iata":"GPO",
-"lat":"-35.6886925",
-"lng":"-63.7601045"
-},
+
 {
 "title":"La Pampa",
 "iata":"RSA",
@@ -203,12 +140,7 @@
 "lat":"-25.7334542",
 "lng":"-54.4806967"
 },
-{
-"title":"Neuquén",
-"iata":"CUT",
-"lat":"-38.9397551",
-"lng":"-69.2734206"
-},
+
 {
 "title":"Neuquén",
 "iata":"NQN",
@@ -227,12 +159,7 @@
 "lat":"-41.1461029",
 "lng":"-71.1636142"
 },
-{
-"title":"Río Negro",
-"iata":"GNR",
-"lat":"-39.0032177",
-"lng":"-67.6123148"
-},
+
 {
 "title":"Río Negro",
 "iata":"VDM",
@@ -245,36 +172,21 @@
 "lat":"-24.8442254",
 "lng":"-65.4806004"
 },
-{
-"title":"Salta",
-"iata":"TTG",
-"lat":"-45.7894316",
-"lng":"-67.4696871"
-},
+
 {
 "title":"San Juan",
 "iata":"UAQ",
 "lat":"-31.5718093",
 "lng":"-68.4247562"
 },
-{
-"title":"San Luis",
-"iata":"RLO",
-"lat":"-32.3803797",
-"lng":"-65.1821393"
-},
+
 {
 "title":"San Luis",
 "iata":"LUQ",
 "lat":"-33.270439",
 "lng":"-66.3570119"
 },
-{
-"title":"San Luis",
-"iata":"VME",
-"lat":"-33.7200328",
-"lng":"-65.3754799"
-},
+
 {
 "title":"Santa Cruz",
 "iata":"FTE",
@@ -287,12 +199,7 @@
 "lat":"-51.6117845",
 "lng":"-69.3085038"
 },
-{
-"title":"Santa Fe",
-"iata":"RCQ",
-"lat":"-29.2095724",
-"lng":"-59.6811779"
-},
+
 {
 "title":"Santa Fe",
 "iata":"ROS",
@@ -305,12 +212,7 @@
 "lat":"-31.7088702",
 "lng":"-60.8100047"
 },
-{
-"title":"Santiago del Estero",
-"iata":"RHD",
-"lat":"-27.5064404",
-"lng":"-64.9349654"
-},
+
 {
 "title":"Santiago del Estero",
 "iata":"SDE",
