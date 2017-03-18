@@ -20,10 +20,10 @@ var googleMapMarkers = (function () {
     googleMapMarkers.prototype.addMarker = function (lat, lng, data, callback) {
         var point = new google.maps.LatLng(lat, lng);
         var image = {
-            url: data.image,
-            size: new google.maps.Size(20, 32),
+            url: './images/airport.png',
+            size: new google.maps.Size(32, 37),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 32)
+            anchor: new google.maps.Point(16, 37)
         };
         var marker = new google.maps.Marker({
             position: point,

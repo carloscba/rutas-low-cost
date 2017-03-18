@@ -1,16 +1,32 @@
 <html>
     <head>
-        <title>googleMapMarkers</title>
+        <title>Rutas Aereas</title>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <style>
+            a{
+                color: #000;
+            }
+            ul{
+                display: inline;
+            }
             .aeropuertos li{
                 list-style: none;
+
+            }
+            .aeropuertos a{
+                text-decoration: none;
             }
             .aeropuertos span{
                 display: inline;
                 padding-left: 5px;
             }
+            .aeropuertos span:after {
+                content: " -";
+            }
+            .aeropuertos span:last-child:after {
+                content: "";
+            }                        
         
         </style>
     </head>
@@ -21,30 +37,29 @@
                 <!---------OPCIONES------------/-->
                 <div class="col-md-4">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Aerolineas</a></li>
-                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Aeropuertos</a></li>
+                        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><strong>Andes</strong></a></li>
+                        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><strong>Alas del sur</strong></a></li>
+                        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><strong>AeroJet</strong></a></li>                        
+                        
                     </ul>
                     <div class="tab-content">
+                        
                         <div role="tabpanel" class="tab-pane active" id="tab1">
-
-                            <h2>Andes</h2>
                             <ul ng-repeat="ruta in rutas['Andes']" class="aeropuertos">
-                                <li><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></li>
+                                <li><a href="#" ng-click="viewRoute('Andes', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                             </ul>
-
-                            <h2>Alas del sur</h2>
-                            <ul ng-repeat="ruta in rutas['Alas del Sur']" class="aeropuertos">
-                                <li><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></li>
-                            </ul>                            
-                  
-
                         </div>
+
                         <div role="tabpanel" class="tab-pane" id="tab2">
-                            <ul>
-                                <li ng-repeat="destino in destinos">{{destino.title}} ({{destino.iata}})</li>
+                            <ul ng-repeat="ruta in rutas['Alas del Sur']" class="aeropuertos">
+                                <li><a href="#" ng-click="viewRoute('Alas del Sur', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                             </ul>                             
-                            
                         </div>
+                        
+                        <div role="tabpanel" class="tab-pane" id="tab3">    
+                        </div>
+                        
+
                     </div>
                 </div>
 
