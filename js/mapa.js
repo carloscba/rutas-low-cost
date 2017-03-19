@@ -29,6 +29,7 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     }
 
                     $scope.viewRoute = function(company, route){
+                        $scope.colMenu = 1;
 
                         switch(company){
                             case "Andes":
@@ -54,6 +55,7 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     }
 
                     $scope.viewAirport = function(iata, lat, lng){
+                        $scope.colMenu = 1;
                         map.setCenter(lat, lng);
                         map.clearMarkers();
                         for(n in lines){
