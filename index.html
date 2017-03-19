@@ -16,11 +16,22 @@
                     <a href="#" ng-click="colMenu=1" ng-show="(colMenu > 1)" class="btnCerrar" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" ng-show="(colMenu > 1)">
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a ng-click="all(false)" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                            <strong>Todas las rutas</strong>
+                            </a>
+                        </h4>
+                        </div>
+                    </div>                    
+                    
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <strong>Aeropuertos</strong>
+                            <strong>Por Aeropuerto</strong>
                             </a>
                         </h4>
                         </div>
@@ -36,7 +47,7 @@
                         <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
                             <span style="color:#FF0000">&block;</span>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <a ng-click="setRoutes('Andes', true, '#FF0000')" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <strong>Andes</strong>
                             </a>
                             
@@ -54,7 +65,7 @@
                         <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
                             <span style="color:#00FF00">&block;</span>
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <a ng-click="setRoutes('Alas del Sur', true, '#00FF00')" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             <strong>Alas del sur </strong>
                             </a>
                         </h4>
@@ -68,24 +79,27 @@
                         </div>
                     </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
-                                <span style="color:#0000FF">&block;</span>
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                <strong>American Jet</strong>
-                                </a>
-                            </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <span style="color:#0000FF">&block;</span>
+                            <a ng-click="setRoutes('American', true, '#0000FF')" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <strong>American Jet</strong>
+                            </a>
+                        </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
                                 <ul ng-repeat="ruta in rutas['American']" class="aeropuertos">
                                     <li><a href="#" ng-click="viewRoute('American', $index)"><span ng-repeat="aeropuerto in ruta">{{getName(aeropuerto)}}</span></a></li>
                                 </ul>
-                        </div>
+                            </div>
                         </div>
                     </div>
-                    </div>  
+
+
+
+                </div>  
 
 
                 </div>
