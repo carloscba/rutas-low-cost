@@ -109,6 +109,7 @@ angular.module('mapApp', []).controller('mapCtrl', function($scope, $http) {
                     $scope.viewAirport = function(iata, lat, lng){
                         $scope.colMenu = 1;
                         map.setCenter(lat, lng);
+                        map.zoom(7)
                         $scope.clear()                       
 
                         for(var n in $scope.rutas){
